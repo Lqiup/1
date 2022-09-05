@@ -219,10 +219,13 @@
             irr_mx(j) = mgt6op(nop(j),j)
             irr_asq(j) = mgt7op(nop(j),j)
             irr_sca(j) = mgt2iop(nop(j),j)
+            irr_daymin(j) = mgt3iop(nop(j),j)
             irr_noa(j) = mgt10iop(nop(j),j)
             if (irr_noa(j) <= 0) irr_noa(j) = irrno(j)
             if (irr_noa(j) <= 0) irr_noa(j) = hru_sub(j)
-            if (wstrs_id(j) <= 0) wstrs_id(j) = 1     
+            if (wstrs_id(j) <= 0) wstrs_id(j) = 1  
+            if (irr_daymin(j) <= 0) irr_daymin(j) = 1
+            irr_daycur(j) = irr_daymin(j)
             if (irr_eff(j) > 1.) irr_eff(j) = 0.
             if (irr_eff(j) == 0.) irr_eff(j) = 1.
             if (irr_mx(j) < 1.e-6) irr_mx(j) = 25.4
@@ -235,7 +238,8 @@
      *      sol_rsd(1,j), sol_sumno3(j),sol_sumsolp(j)
 1010  format (a5,1x,a4,3i6,1x,e10.5,1x,2a15,7f10.2)
           end if
-                    
+          
+            
           case (11)   !! auto fertilizer operation
             iafrttyp(j) = mgt1iop(nop(j),j)
             nstress(j) = mgt2iop(nop(j),j)
