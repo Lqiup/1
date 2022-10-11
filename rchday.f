@@ -213,7 +213,7 @@
           do ii = 1, itotr
             pdvr(ii) = pdvar(ipdvar(ii))
           end do
-          if (iscen == 1 .and. isproj == 0) then
+          if (iscen == 1 .and. isproj == 0 .or. isproj == 3) then
             if (icalen == 0) write (7,5000) j, subgis(j), iida,       
      &             rch_dakm(j), (pdvr(ii), ii = 1, itotr)
             if(icalen == 1)write (7,5002) j, subgis(j), i_mo, icl(iida),
