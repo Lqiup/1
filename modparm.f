@@ -4,7 +4,13 @@
             
 !!    srin - co2 (EPA)
       real*8 :: co2_x2, co2_x
-           
+      
+!!    srin wtmp
+      real*8, dimension (:), allocatable :: tmp_win1, tmp_win2, tmp_sum1, tmp_sum2, tmp_spr1, 
+     & tmp_spr2, tmp_fal1, tmp_fal2
+     
+      real*8 :: wtmp
+              
       real*8, dimension (:), allocatable :: alph_e
       real*8, dimension (:), allocatable :: co_p, surlag, cdn, nperco
       real*8, dimension (:), allocatable :: cmn, phoskd, psp, sdnco
@@ -660,7 +666,7 @@
       character(len=16), dimension (:), allocatable :: snam
       character(len=17), dimension (300) :: pname
 !!    adding qtile to output.hru write 3/2/2010 gsm  increased heds(70) to heds(71)
-      character(len=13) :: heds(79),hedb(24),hedr(46),hedrsv(41)
+      character(len=13) :: heds(79),hedb(24),hedr(58),hedrsv(41)
       character(len=13) :: hedwtr(40)
       character(len=4) :: title(60), cpnm(10000)
       character(len=17), dimension(100) :: fname
@@ -802,9 +808,19 @@
       real*8, dimension (:,:),allocatable :: ro_bmp_ppt, ro_bmp_spt
       real*8, dimension (:,:),allocatable :: ro_bmp_pnt, ro_bmp_snt
 
-      real*8, dimension (:),allocatable :: bmp_flo, bmp_sed, bmp_bac
-      real*8, dimension (:),allocatable :: bmp_pp, bmp_sp
-      real*8, dimension (:),allocatable :: bmp_pn, bmp_sn, bmp_flag
+      real, dimension (:),allocatable :: bmp_flo, bmp_sed, bmp_bac
+      real, dimension (:),allocatable :: bmp_pp, bmp_sp
+      real, dimension (:),allocatable :: bmp_pn, bmp_sn, bmp_flag
+      
+      !! **salt**
+      integer, dimension(:), allocatable :: bmp_salt
+      real, dimension(:,:),allocatable ::  sub_salt,salt_flag,sub_saltmo
+      real, dimension(:,:,:), allocatable :: sro_salt,slt_salt
+      real, dimension(:,:,:), allocatable:: gw_salt,tile_salt
+      real, dimension(:), allocatable :: saltdr 
+      real :: ec_int,ec_slp
+      integer :: salt_num
+      !! **salt**
 
       real*8, dimension (:),allocatable :: bmp_flos, bmp_seds, bmp_bacs
       real*8, dimension (:),allocatable :: bmp_pps, bmp_sps
