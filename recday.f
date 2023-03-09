@@ -159,19 +159,25 @@
       end do
 
       if (ifirstr(inum1) == 0) then
+        if (isalt == 0) then
+          read (555+inum1,*) idap, iyp, floday, sedday, orgnday,        
+     &        orgpday, no3day, nh3day, no2day, minpday, cbodday,        
+     &        disoxday, chladay, solpstday, srbpstday, bactpday,        
+     &        bactlpday, cmtl1day, cmtl2day, cmtl3day
+        else
           read (555+inum1,*) idap, iyp, floday, sedday, orgnday,        
      &        orgpday, no3day, nh3day, no2day, minpday, cbodday,        
      &        disoxday, chladay, solpstday, srbpstday, bactpday,        
      &        bactlpday, cmtl1day, cmtl2day, cmtl3day,salt1,salt2,
      &        salt3,salt4,salt5,salt6,salt7,salt8,salt9,salt10
+        endif
       else
         ifirstr(inum1) = 0
         do
           read (555+inum1,*) idap, iyp, floday, sedday, orgnday,        
      &        orgpday, no3day, nh3day, no2day, minpday, cbodday,        
      &        disoxday, chladay, solpstday, srbpstday, bactpday,        
-     &        bactlpday, cmtl1day, cmtl2day, cmtl3day,salt1,salt2,
-     &        salt3,salt4,salt5,salt6,salt7,salt8,salt9,salt10
+     &        bactlpday, cmtl1day, cmtl2day, cmtl3day
           if (iyp + idap <= 0) exit
           if (iyp == iyr .and. idap == id1) exit
         end do

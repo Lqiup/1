@@ -5,6 +5,7 @@
 
       use parm
       
+      isalt = 0
       salt_num = 0
       sub_saltmo = 0
 !!    Srin co2 (EPA)
