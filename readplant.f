@@ -5,7 +5,7 @@
 !!    database (plant.dat)
 
 !!    ~ ~ ~ INCOMING VARIABLES ~ ~ ~
-!!    name      |units            |definition
+!!    name      |units       definition
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 !!    mcrdb     |none             |maximum number of crops/landcover in 
 !!                                |database file (crop.dat)
