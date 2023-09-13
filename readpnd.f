@@ -598,9 +598,9 @@
       read (104,*,iostat=eof) (lid_lus(k),k=1,mudb)
       if (eof < 0) exit
 	nlid(i)=1
-      do while (is_numeric(lid_lus(nlid(i)))== .TRUE.)
+      !do while (is_numeric(lid_lus(nlid(i)))== .TRUE.)
  		nlid(i)=nlid(i) + 1
-      END DO
+      !END DO
 	nlid(i) = nlid(i) - 1
 	backspace(104)
 	backspace(104)
