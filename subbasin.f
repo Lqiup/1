@@ -208,11 +208,10 @@
         if (ppet(j)%mce > ppet(j)%ndays) ppet(j)%mce = 1
         ppet_mce = ppet(j)%mce
         !! calculate climatic moisture index - cumulative p/pet
-        ppet(j)%rto = ppet(j)%rto + precipday / pet_day
         !! subtract the 30 day previous and add the current day precip/pet
         ppet(j)%precip_sum = ppet(j)%precip_sum + precipday - ppet(j)%precip(ppet_mce)
         ppet(j)%pet_sum = ppet(j)%pet_sum + pet_day - ppet(j)%pet(ppet_mce)
-        ppet(j)%rto = ppet(j)%precip_sum / ppet(j)%pet_sum
+        ppet(j)%rto = ppet(j)%precip_sum / (ppet(j)%pet_sum + 0.5)
         ppet(j)%precip(ppet_mce) = precipday
         ppet(j)%pet(ppet_mce) = pet_day
         if (ppet(j)%trop > 0) then
