@@ -48,7 +48,7 @@
       use parm
       
       implicit none
-      prog = "SWAT Nov 6  VER 2023/Rev 691"
+      prog = "SWAT Nov 14  VER 2023/Rev 692"
       write (*,1000)
  1000 format(1x,"               SWAT2022               ",/,             
      &          "               Rev. 691               ",/,             
