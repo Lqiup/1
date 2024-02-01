@@ -1,6 +1,9 @@
       module parm
       integer icalen
       real*8 :: prf_bsn
+      
+!! current working direcory from project - Chris George
+      character(len=255) :: cwd
             
       type precip_pet_moving_average                  !!for tropical plant growth  
         integer :: trop = 0                           !!      |1=tropical growth – moisture driven

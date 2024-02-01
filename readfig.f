@@ -113,7 +113,8 @@
 
       character (len=80) :: titldum
       character (len=1) ::  a
-      character (len=13) :: month_in, day_in, annual_in, year_in
+      character (len=13) :: month_in, annual_in, year_in
+      character (len=200) :: day_in   !! Chris G. 3-21-23
       character (len=13) :: apex_in
       character (len=13) :: hour_in, resfile, lwqfile, rtefile, swqfile
       character (len=13) :: subfile, auto_in , rufile
@@ -299,7 +300,8 @@
             case (10) !! icode = 10  RECDAY command: read in daily values
                       !! with water in cms and rest in tons
               day_in = ""
-              read (102,5100) day_in
+              !read (102,5100) day_in
+              read (102, 5101) day_in
               call caps(day_in)
               open (555+inum1s(idum),file=day_in,recl=350)
               do ii = 1,4
@@ -409,6 +411,7 @@
 !! isproj = 2 (CEAP)
  5003 format (a1,9x,4i6,i5,f8.0,i8)
  5100 format (10x,2a13)
+ 5101 format (10x,a200) 
  5200 format (a80)
  5300 format (2i6)
  5400 format (20a4)

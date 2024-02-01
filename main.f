@@ -48,18 +48,18 @@
       use parm
       
       implicit none
-      prog = "SWAT Nov 14  VER 2023/Rev 692"
+      prog = "SWAT Feb 1  VER 2024/Rev 693"
       write (*,1000)
- 1000 format(1x,"               SWAT2022               ",/,             
-     &          "               Rev. 691               ",/,             
+ 1000 format(1x,"               SWAT2024               ",/,             
+     &          "               Rev. 693               ",/,             
      &          "      Soil & Water Assessment Tool    ",/,             
      &          "               PC Version             ",/,             
      &          " Program reading from file.cio . . . executing",/)
      
 !! current working directory - for Chris G.
 
-      !call getcwd(cwd)
-      !write (*,*) trim(cwd)
+      call getcwd(cwd)
+      write (*,*) trim(cwd)
 
 !! process input
 		
